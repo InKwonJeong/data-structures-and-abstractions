@@ -92,12 +92,13 @@ public class ArrayBag<T> implements BagInterface<T> {
 		int counter = 0;
 		
 		while(counter < numberOfEntries && !found) {
-			if(bag[counter].equals(anEntry))
+			if(bag[counter].equals(anEntry)) {
 				found = true;
+				return counter;
+			}
 			counter++;
 		}
-		if(found) return counter;
-		else return -1;
+		return -1;
 	}
 
 	/** @see bag.BagInterface#clear() */
